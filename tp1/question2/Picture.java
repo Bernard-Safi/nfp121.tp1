@@ -21,12 +21,14 @@ public class Picture {
     private Triangle roof;
     private Circle sun;
     private Circle yellowSun;
+    private boolean terreFixe;
 
     /**
      * Constructor for objects of class Picture
      */
     public Picture() {
         // nothing to do... instance variables are automatically set to null
+        terreFixe=false;
     }
 
     /**
@@ -92,8 +94,16 @@ public class Picture {
         }
     }
     
+    public void setTerreFixe(){
+     this.terreFixe=true;   
+    }
+    public void setTerreNonFixe(){
+        this.terreFixe=false;
+    }
     public void coucheSoleil(){
+        if(this.terreFixe){
      this.sun.slowMoveVertical(250);
+    }
     }
 
 }
